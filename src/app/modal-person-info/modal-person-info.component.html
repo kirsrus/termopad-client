@@ -1,0 +1,95 @@
+<div class="body">
+
+  <h1 mat-dialog-title>{{titleFIO}}</h1>
+  <h2>{{titlePosition}}</h2>
+  <div mat-dialog-actions>
+    <table class="info">
+      <tr>
+        <td>
+          <img
+            alt=""
+            width="100"
+            height="133"
+            style="position: absolute; margin-left: 285px; margin-top:390px; cursor: pointer;"
+            [src]="personImg"
+            onError="this.onerror=null; this.src='/assets/blank.gif'"
+            (click)="rotateImage()"
+
+          >
+          <img
+            [src]="personSrc"
+            width="400"
+            height="534"
+            alt=""
+            onError="this.onerror=null; this.src='/assets/foto-not-found-0.jpeg'"
+          >
+        </td>
+        <td class="table-content">
+
+          <!-- Табулятор -->
+          <mat-tab-group class="tabgroup">
+            <mat-tab label="График">
+              <div class="tab">
+
+                <!-- График -->
+                <canvas baseChart width="800" height="400"
+                        [datasets]="lineChartData"
+                        [labels]="lineChartLabels"
+                        [colors]="lineChartColors"
+                        [chartType]="lineChartType"
+                        [options]="lineChartOptions"
+                        [legend]="lineChartLegend"
+                        [plugins]="lineChartPlugins"
+                ></canvas>
+                <!-- / График -->
+
+              </div>
+            </mat-tab>
+            <mat-tab class="tab" label="Таблица">
+              <div class="tab">
+
+                <!-- Таблица -->
+                <div class="table-container">
+                  <div>
+                    <table mat-table [dataSource]="tableData" class="mat-elevation-z8" style="min-width: 100%" matSort>
+                      <ng-container matColumnDef="time">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>Время замера</th>
+                        <td mat-cell *matCellDef="let element">{{ element.time }}</td>
+                      </ng-container>
+                      <ng-container matColumnDef="termapad">
+                        <th mat-header-cell *matHeaderCellDef>Термапад</th>
+                        <td mat-cell *matCellDef="let element">
+                          <mat-icon style="cursor: pointer; font-size: 18px; color: #777777;"
+                                    (click)="showPerson(element.wigand, element.image)">face
+                          </mat-icon>
+                          {{ element.termapad }}</td>
+                      </ng-container>
+                      <ng-container matColumnDef="termerature">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>Температура</th>
+                        <td mat-cell *matCellDef="let element"
+                            [style.color]="colorTemp(element.termerature)">{{ element.termerature }}</td>
+                      </ng-container>
+                      <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+                      <tr mat-row *matRowDef="let row; columns: tableColumns"></tr>
+                    </table>
+                  </div>
+                  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+                </div>
+                <!-- / Таблица -->
+
+              </div>
+            </mat-tab>
+          </mat-tab-group>
+          <!-- / Табулятор -->
+
+
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button mat-raised-button color="primary" (click)="onOkClick()">Ok</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

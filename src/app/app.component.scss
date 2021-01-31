@@ -1,0 +1,187 @@
+h1 {
+  text-align: center;
+  color: rgb(51, 51, 51);
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
+  border-bottom: 4px rgb(177, 176, 176) solid;
+}
+//
+//.card {
+//  max-width: 400px;
+//}
+//
+//.light-up {
+//  -webkit-filter: brightness(150%);
+//}
+//
+//@mixin box() {
+//  border-radius: 10px;
+//  margin: 20px auto;
+//  width: 200px;
+//  text-align: center;
+//  font-family: Arial, sans-serif;
+//}
+//
+//@mixin foto-light {
+//  .foto {
+//    img {
+//      -webkit-filter: brightness(150%);
+//    }
+//  }
+//}
+//
+//@mixin foto-grayscale {
+//  .foto {
+//    img {
+//      filter: grayscale(100%) brightness(150%) contrast(80%);
+//    }
+//  }
+//}
+//
+//.box-default {
+//  @include box();
+//  box-shadow: 0 2px 2px 3px rgb(162, 162, 162);
+//  background-color: rgb(238, 238, 238);
+//
+//  .gradus {
+//    color: #bababa;
+//  }
+//
+//  .title {
+//    color: #949393;
+//  }
+//
+//  .foto {
+//    img {
+//      filter: grayscale(100%); //brightness(150%) contrast(80%);
+//    }
+//  }
+//}
+//
+//.box-normal {
+//  @include box();
+//  @include foto-light();
+//
+//  box-shadow: 0 2px 2px 3px rgb(55, 159, 2);
+//  background-color: rgb(233, 253, 230);
+//
+//  .gradus {
+//    color: #30ae32;
+//  }
+//}
+//
+//.box-warning {
+//  @include box();
+//  @include foto-light();
+//
+//  box-shadow: 0 2px 2px 3px rgb(191, 190, 86);
+//  background-color: rgb(255, 255, 229);
+//
+//  .gradus {
+//    color: rgb(215, 154, 0);
+//  }
+//}
+//
+//.box-danger {
+//  @include box();
+//  @include foto-light();
+//
+//  box-shadow: 0 2px 2px 3px rgb(250, 56, 56);
+//  background-color: rgb(255, 219, 219);
+//
+//  .gradus {
+//    color: rgb(215, 0, 0);
+//  }
+//}
+//
+//.box-hold {
+//  @include box();
+//  @include foto-light();
+//
+//  box-shadow: 0 2px 2px 3px rgb(45, 60, 255);
+//  background-color: rgb(223, 219, 255);
+//
+//  .gradus {
+//    color: rgb(0, 12, 233);
+//  }
+//}
+//
+//.title {
+//  text-align: left;
+//  width: 80%;
+//  margin: 0 auto;
+//
+//  h4 {
+//    font-size: 20px;
+//    font-weight: normal;
+//    margin: 0;
+//    text-align: center;
+//  }
+//}
+//
+//
+//.foto {
+//  width: 100%;
+//  margin: 5px auto;
+//
+//  .not-found {
+//
+//  }
+//
+//  .gray {
+//    filter: grayscale(0%) brightness(150%) contrast(80%);
+//    //-webkit-filter: brightness(145%);
+//    //-webkit-filter: brightness(145%);
+//  }
+//
+//  img {
+//    width: 90%;
+//    margin: 0;
+//    border-radius: 5px;
+//    box-shadow: 0 0 0 1px rgb(138, 138, 138);
+//  }
+//}
+//
+//.temperature {
+//  text-align: left;
+//  width: 80%;
+//  margin: 0 auto;
+//  font-size: 14px;
+//  color: rgba(0, 0, 0, 0.54);
+//}
+//
+//.gradus {
+//  font-size: 18px;
+//  font-weight: bold;
+//}
+//
+//.name {
+//  text-align: center;
+//  padding: 0 10px;
+//  //font-family: "Courier New", sans-serif;
+//
+//  p {
+//    margin: 0;
+//  }
+//}
+//
+//.depart {
+//  text-align: left;
+//
+//  .title {
+//    font-size: 10px;
+//    color: rgb(51, 51, 15);
+//    border-bottom: 1px rgb(204, 204, 204) solid;
+//  }
+//
+//  .text {
+//    font-size: 13px;
+//  }
+//}
+//
+//.termo-box {
+//  display: inline-flex;
+//  padding: 0 10px
+//}

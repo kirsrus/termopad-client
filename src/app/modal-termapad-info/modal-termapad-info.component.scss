@@ -1,0 +1,43 @@
+h1 {
+  margin-bottom: 0;
+  font-size: 2em;
+  color: #2b2b2b;
+}
+
+h2 {
+  font-size: 1em;
+  margin-top: 10px;
+  margin-bottom: 0;
+  color: #999999;
+}
+
+.tabgroup {
+  min-width: 800px;
+  margin-left: 10px;
+}
+
+.tab {
+  padding-top: 10px;
+}
+
+.table-container {
+  position: relative;
+  max-height: 450px;
+  overflow: auto;
+
+  td {
+    vertical-align: middle;
+  }
+}
+
+.mat-column-time {
+  max-width: 100px;
+}
+
+table td {
+  vertical-align: top;
+}
+
+.table-content {
+  vertical-align: top;
+}

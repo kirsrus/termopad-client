@@ -1,0 +1,95 @@
+<!-- Блок с существующими термопадами. Пустышки обрабатываются отдельно (служат для добивания
+     пустышек до нужного их числа на странице) -->
+<div class="termo-box">
+  <div *ngIf="temperature.termopadID !== 0; else emptyTemopad" [ngClass]="baseClass" [style]="baseStyle">
+    <div class="title">
+      <h4 title="{{ temperature.termopadDescription }}">
+        {{ temperature.termopadName }}
+        <mat-icon style="cursor: pointer; font-size: 18px; color: #777777;" (click)="openTermapadDetailWindow(temperature.termopadID)">info</mat-icon>
+      </h4>
+
+    </div>
+    <div class="temperature">
+      Температура: <span class="gradus">{{ temperature.temperature ? temperature.temperature.toFixed(1) : '?' }}</span>
+      ºC
+    </div>
+    <div class="foto" *ngIf="temperature.temperatureImageURL; then imageFound else imageNotFound"></div>
+
+    <ng-template #imageFound>
+      <img src="{{ temperature.temperatureImageURL }}"
+           alt="{{ temperature.temperatureDescription }}"
+           width="180"
+           height="240"
+           style="cursor: pointer;"
+           onError="this.onerror=null; this.src='/assets/foto-not-found-0.jpeg'"
+           (click)="openPersonDetailWindow()"
+      >
+    </ng-template>
+
+    <ng-template #imageNotFound>
+      <img src="/assets/foto-not-found-0.jpeg"
+           alt="Пока никто не зарегистрировал проход под этому термопаду"
+           style="width: 180px; height: 240px"
+      >
+    </ng-template>
+
+    <div class="name">
+      <p
+        title="{{ (temperature.personNameLast ?.length > 17) ? temperature.personNameLast : '' }}"
+      ><strong>
+        {{ temperature.personNameLast ? (temperature.personNameLast | slice:0:17) : '....' }}
+      </strong></p>
+      <p
+        title="{{ (temperature.personNameFirst?.length > 17) ? temperature.personNameFirst : '' }}"
+      >
+        {{ temperature.personNameFirst ? (temperature.personNameFirst | slice:0:17) : '....' }}
+      </p>
+      <p
+        title="{{ (temperature.personNameMiddle?.length > 17) ? temperature.personNameMiddle : '' }}"
+      >
+        {{ temperature.personNameMiddle ? (temperature.personNameMiddle | slice:0:17) : '....' }}
+      </p>
+    </div>
+    <div class="depart">
+      <div class="title">Отдел:</div>
+      <div
+        class="name"
+        title="{{ (temperature.personDepartament?.length > 17) ? temperature.personDepartament : '' }}"
+      >
+        {{ temperature.personDepartament ? (temperature.personDepartament | slice:0:17) : '....' }}
+      </div>
+      <div class="title">Должность:</div>
+      <div
+        class="name"
+        title="{{ (temperature.personPostion?.length > 17) ? temperature.personPostion : '' }}"
+      >
+        {{ temperature.personPostion ? (temperature.personPostion | slice:0:17) : '....' | slice:0:17}}
+      </div>
+    </div>
+  </div>
+
+  <!-- Термопад - пустышка -->
+  <ng-template #emptyTemopad>
+    <div [ngClass]="baseClass" style="filter: opacity(20%)">
+      <div class="title">
+        <h4>&nbsp;</h4>
+      </div>
+
+      <div class="temperature">&nbsp;</div>
+      <div class="foto">
+        <img src="/assets/foto-not-found-0.jpeg" alt="" style="filter: opacity(0); width: 180px; height: 240px">
+      </div>
+      <div class="name">
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+      </div>
+      <div class="depart">
+        <div class="title">&nbsp;</div>
+        <div class="name">&nbsp;</div>
+        <div class="title">&nbsp;</div>
+        <div class="name">&nbsp;</div>
+      </div>
+    </div>
+  </ng-template>
+</div>
